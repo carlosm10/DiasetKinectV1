@@ -11,7 +11,13 @@ using System.Text;
 
 public class KinectManager : MonoBehaviour
 {
+	// Used to send picture to webService
+	public picturePost picture_Post;
+
+	// Used to send data to webservice.
 	public PostJsonData postJson;
+
+	// Used to display current time on screen.
 	public currentTime currentTime;
 
 	public enum Smoothing : int { None, Default, Medium, Aggressive }
@@ -1630,6 +1636,8 @@ public class KinectManager : MonoBehaviour
 
 				// Send User event data to Database
 				postJson.PostData (002, "eder", timeString);
+
+				StartCoroutine( picture_Post.uploadPNG ());
 
 			}
 		}

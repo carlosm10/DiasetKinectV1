@@ -45,9 +45,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\App\scripts\GetJsonData.cs" />
      <Compile Include="Assets\App\scripts\PostJsonData.cs" />
      <Compile Include="Assets\App\scripts\currentTime.cs" />
+     <Compile Include="Assets\App\scripts\picturePost.cs" />
      <Compile Include="Assets\App\scripts\window.cs" />
      <Compile Include="Assets\KinectScripts\AvatarController.cs" />
      <Compile Include="Assets\KinectScripts\AvatarControllerClassic.cs" />
