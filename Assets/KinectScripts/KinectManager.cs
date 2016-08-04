@@ -1121,10 +1121,11 @@ public class KinectManager : MonoBehaviour
 	{
 
 		// converts current time to string.
-		timeString = currentTime.time.ToString ("yyyy-MM-dd HH:mm:ss");
+		timeString = currentTime.time.ToString("yyyy-MM-dd");
+
 
 		// Update Clock on screen.
-		timeText.GetComponent<GUIText> ().text = timeString;
+		timeText.GetComponent<GUIText> ().text = currentTime.time.ToString("yyyy-MM-dd HH:mm:ss");
 
 		if(KinectInitialized)
 		{
@@ -1637,7 +1638,8 @@ public class KinectManager : MonoBehaviour
 				// Send User event data to Database
 				postJson.PostData (002, "eder", timeString);
 
-				StartCoroutine( picture_Post.uploadPNG ());
+				// Take a screenshot and upload to server >>timeString<< is the name of the file
+				StartCoroutine( picture_Post.uploadPNG (timeString));
 
 			}
 		}

@@ -15,7 +15,7 @@ public class picturePost : MonoBehaviour {
 	
 	}
 
-	public IEnumerator uploadPNG(){
+	public IEnumerator uploadPNG(string picture_name){
 		// We should only read the screen after all rendering is complete
 		yield return new WaitForEndOfFrame();
 
@@ -35,7 +35,11 @@ public class picturePost : MonoBehaviour {
 		// Create a Web Form
 		WWWForm form = new WWWForm();
 		form.AddField("frameCount", Time.frameCount.ToString());
-		form.AddBinaryData("file", bytes, "screenShot.png", "image/png");
+
+		// form.AddBinaryData("file", bytes, "screenShot.png", "image/png");
+
+		// Custom name of the file depending on the date and time.
+		form.AddBinaryData("file", bytes, picture_name+".png", "image/png");
 
 		// Upload to a cgi script
 		WWW w = new WWW(screenShotURL, form);
