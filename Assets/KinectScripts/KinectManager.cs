@@ -1121,11 +1121,12 @@ public class KinectManager : MonoBehaviour
 	{
 
 		// converts current time to string.
-		timeString = currentTime.time.ToString("yyyy-MM-dd");
+		timeString = currentTime.time.ToString("yyyy-MM-dd HH-mm-ss");
 
 
 		// Update Clock on screen.
 		timeText.GetComponent<GUIText> ().text = currentTime.time.ToString("yyyy-MM-dd HH:mm:ss");
+		//timeText.GetComponent<GUIText> ().text = currentTime.time.ToString("HH-mm-ss");
 
 		if(KinectInitialized)
 		{

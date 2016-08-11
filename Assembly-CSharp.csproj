@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\App\scripts\PostJsonData.cs" />
+     <Compile Include="Assets\App\scripts\config.cs" />
      <Compile Include="Assets\App\scripts\currentTime.cs" />
      <Compile Include="Assets\App\scripts\picturePost.cs" />
      <Compile Include="Assets\App\scripts\window.cs" />
