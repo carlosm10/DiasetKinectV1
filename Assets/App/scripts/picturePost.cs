@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class picturePost : MonoBehaviour {
+public class PicturePost : MonoBehaviour {
 
 	public string screenShotURL = "localhost/webservice-kinect/upload_file.php";
 

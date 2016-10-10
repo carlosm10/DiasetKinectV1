@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/App/window.unity
+- path: Assets/App/scenes/window.unity
   isLoaded: 1
   isActive: 1

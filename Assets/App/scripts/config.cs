@@ -4,7 +4,7 @@ using System.Collections;
 using System.Text.RegularExpressions;
 using System;
 
-public class config : MonoBehaviour {
+public class Config : MonoBehaviour {
 
 	public GameObject maquina;
 	public GameObject usuario;
@@ -24,12 +24,13 @@ public class config : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Maquina = maquina.GetComponent<InputField> ().text;
+		/*Maquina = maquina.GetComponent<InputField> ().text;
 		Usuario = usuario.GetComponent<InputField> ().text;
 		if(iniciar.(KeyCode.Return)){
 			if(Maquina != "" && Usuario != ""){
 				StartButton ();
 			}
-		}	
+		}
+		*/
 	}
 }

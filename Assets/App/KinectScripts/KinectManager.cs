@@ -12,13 +12,13 @@ using System.Text;
 public class KinectManager : MonoBehaviour
 {
 	// Used to send picture to webService
-	public picturePost picture_Post;
+	public PicturePost picture_Post;
 
 	// Used to send data to webservice.
 	public PostJsonData postJson;
 
 	// Used to display current time on screen.
-	public currentTime currentTime;
+	public CurrentTime currentTime;
 
 	public enum Smoothing : int { None, Default, Medium, Aggressive }
 
@@ -97,6 +97,9 @@ public class KinectManager : MonoBehaviour
 
 	// GUI Text to show user id.
 	public GUIText userText;
+
+	// GUI Text to show machine id.
+	public GUIText machineText;
 
 	// GUI Text to show current Time.
 	public GUIText timeText;
@@ -1108,6 +1111,7 @@ public class KinectManager : MonoBehaviour
 		{
 			CalibrationText.GetComponent<GUIText>().text = "WAITING FOR USERS";
 			userText.GetComponent<GUIText> ().text = "user---";
+			machineText.GetComponent<GUIText> ().text = "machine---";
 			//timeText.GetComponent<GUIText>().text = currentTime.time.ToString("hh:mm:ss");
 
 		}
@@ -1631,13 +1635,17 @@ public class KinectManager : MonoBehaviour
 			
 			if(CalibrationText != null)
 			{
+				string current_user = Session_app.current_user;
+				string current_machine = Session_app.current_machine;
 				CalibrationText.GetComponent<GUIText>().text = "USER FOUND";
 
 				// Sets the userId on screen.
-				userText.GetComponent<GUIText> ().text = "user001";
+				userText.GetComponent<GUIText> ().text = current_user;
 
+				//Sets the machineId on screen.
+				machineText.GetComponent<GUIText> ().text = current_machine;
 				// Send User event data to Database
-				postJson.PostData (002, "eder", timeString);
+				postJson.PostData (1, current_user, timeString);
 
 				// Take a screenshot and upload to server >>timeString<< is the name of the file
 				StartCoroutine( picture_Post.uploadPNG (timeString));
