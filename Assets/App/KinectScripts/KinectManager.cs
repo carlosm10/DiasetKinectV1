@@ -1645,7 +1645,7 @@ public class KinectManager : MonoBehaviour
 				//Sets the machineId on screen.
 				machineText.GetComponent<GUIText> ().text = current_machine;
 				// Send User event data to Database
-				postJson.PostData (1, current_user, timeString);
+				postJson.PostData (002, current_user, timeString, current_machine);
 
 				// Take a screenshot and upload to server >>timeString<< is the name of the file
 				StartCoroutine( picture_Post.uploadPNG (timeString));
@@ -1657,6 +1657,10 @@ public class KinectManager : MonoBehaviour
 	// Remove a lost UserId
 	void RemoveUser(uint UserId)
 	{
+
+		string current_user = Session_app.current_user;
+		string current_machine = Session_app.current_machine;
+
 		// If we lose player 1...
 		if(UserId == Player1ID)
 		{
@@ -1710,7 +1714,7 @@ public class KinectManager : MonoBehaviour
 		Debug.Log("Waiting for users.");
 
 		// Send User event data to Database
-		postJson.PostData (003, "eder", timeString);
+		postJson.PostData (003, current_user, timeString, current_machine);
 
 		if(CalibrationText != null)
 		{
