@@ -3,10 +3,7 @@ using System.Collections;
 
 public class PicturePost : MonoBehaviour {
 
-	//public string screenShotURL = "localhost/webservice-kinect/upload_file.php";
-	public string screenShotURL = "http://201.134.41.123/kinect/upload_file.php";
-	//public string screenShotURL = "http://172.16.252.30/kinect/upload_file.php";
-
+	public string screenShotURL = "localhost/webservice-kinect/upload_file.php";
 
 	// Use this for initialization
 	void Start () {
