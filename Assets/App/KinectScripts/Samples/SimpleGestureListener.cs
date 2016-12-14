@@ -4,6 +4,11 @@ using System;
 
 public class SimpleGestureListener : MonoBehaviour, KinectGestures.GestureListenerInterface
 {
+
+	void Start () {
+		Debug.Log ("Start....");
+	}
+
 	// GUI Text to display the gesture messages.
 	public GUIText GestureInfo;
 	
@@ -72,12 +77,26 @@ public class SimpleGestureListener : MonoBehaviour, KinectGestures.GestureListen
 	public bool GestureCompleted (uint userId, int userIndex, KinectGestures.Gestures gesture, 
 	                              KinectWrapper.NuiSkeletonPositionIndex joint, Vector3 screenPos)
 	{
+		/*
 		string sGestureText = gesture + " detected";
+
 		if(gesture == KinectGestures.Gestures.Click)
 			sGestureText += string.Format(" at ({0:F1}, {1:F1})", screenPos.x, screenPos.y);
 		
 		if(GestureInfo != null)
 			GestureInfo.GetComponent<GUIText>().text = sGestureText;
+		*/
+		GestureInfo.GetComponent<GUIText> ().text = gesture + "";
+
+		if(gesture==KinectGestures.Gestures.Squat){
+			//save at database
+			Debug.Log("Squat to database");
+		}
+
+		if(gesture==KinectGestures.Gestures.Jump){
+			//save at database
+			Debug.Log("Jump to database");
+		}
 		
 		progressDisplayed = false;
 		

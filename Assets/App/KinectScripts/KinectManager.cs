@@ -483,6 +483,7 @@ public class KinectManager : MonoBehaviour
 	// adds a gesture to the list of detected gestures for the specified user
 	public void DetectGesture(uint UserId, KinectGestures.Gestures gesture)
 	{
+		Debug.Log ("DetectGesture");
 		int index = GetGestureIndex(UserId, gesture);
 		if(index >= 0)
 			DeleteGesture(UserId, gesture);
@@ -515,11 +516,12 @@ public class KinectManager : MonoBehaviour
 				gestureData.checkForGestures.Add(KinectGestures.Gestures.ZoomOut);			
 				break;
 			
-//			case KinectGestures.Gestures.Jump:
-//				gestureData.checkForGestures.Add(KinectGestures.Gestures.Squat);
-//				break;
-//				
+			case KinectGestures.Gestures.Jump:
+				gestureData.checkForGestures.Add(KinectGestures.Gestures.Squat);
+			break;
+				
 //			case KinectGestures.Gestures.Squat:
+//				Debug.Log ("Squat");
 //				gestureData.checkForGestures.Add(KinectGestures.Gestures.Jump);
 //				break;
 //				
